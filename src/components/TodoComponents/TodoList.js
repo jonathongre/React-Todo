@@ -5,12 +5,15 @@ import Todo from './Todo';
 
 const TodoList = props => {
     return(
+        <>
+        <button className='clear-btn' onClick={props.clearCompleted}>Clear Completed</button>
         <div className='todo-list'>
-            <button className='clear-btn' onClick={props.clearCompleted}>Clear Completed</button>
+            
             {props.taskData.map(item => (
                 <Todo key={item.id} item={item} toggleItem={props.toggleItem} />
             ))}
         </div>
+        </>
     )
 }
 
